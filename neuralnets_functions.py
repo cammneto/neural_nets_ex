@@ -17,3 +17,8 @@ def sigmoid(sum):
 
 def sigmoid_derivative(sigmoid):
     return sigmoid*(1 - sigmoid)
+
+def sigmoid_output(instance,weights0,weights1):
+  hidden_layer = sigmoid(np.dot(instance, weights0))
+  output_layer = sigmoid(np.dot(hidden_layer, weights1))
+  return output_layer[0]
