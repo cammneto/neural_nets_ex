@@ -1,7 +1,6 @@
 #!/bin/python3
 import numpy as np
 import neuralnets_functions as nnf
-#import matplotlib.pyplot as plt
 from sklearn import datasets as dtst
 
 iris = dtst.load_iris()
@@ -9,10 +8,10 @@ iris = dtst.load_iris()
 inputs  = iris.data[0:100]
 outputs = iris.target[0:100]
 outputs = outputs.reshape(-1,1)
-weights0 = 2 * np.random.random((4, 3)) - 1
-weights1 = 2 * np.random.random((3, 1)) - 1
+weights0 = 2 * np.random.random((4, 5)) - 1
+weights1 = 2 * np.random.random((5, 1)) - 1
 
-epochs = 1000000
+epochs = 3000
 learning_rate = 0.01
 error = []
 for epoch in range(epochs):
@@ -36,8 +35,8 @@ for epoch in range(epochs):
     weights1 = weights1 + (input_x_delta1 * learning_rate)
     input_x_delta0 = (input_layer.T).dot(delta_hidden_layer)
     weights0 = weights0 + (input_x_delta0*learning_rate)
-#print('output_layer','\n',output_layer)
-
-for i in inputs:
-    print(iris.target_names[int(round(nnf.sigmoid_output(i,weights0,weights1)))])
+print('Epoch: ' + str(epoch + 1) + ' Error: ' + str(average))
+#print(inputs)
+#for i in range(len(inputs)):
+print(iris.target_names[int(round(nnf.sigmoid_output(50,weights0,weights1)))])
 
