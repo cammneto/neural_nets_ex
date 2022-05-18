@@ -36,7 +36,6 @@ for epoch in range(epochs):
     input_x_delta0 = (input_layer.T).dot(delta_hidden_layer)
     weights0 = weights0 + (input_x_delta0*learning_rate)
 print('Epoch: ' + str(epoch + 1) + ' Error: ' + str(average))
-#print(inputs)
-#for i in range(len(inputs)):
-print(iris.target_names[int(round(nnf.sigmoid_output(50,weights0,weights1)))])
 
+for i in inputs:
+    print(iris.target_names[abs(int(round(nnf.sigmoid_output(i,weights0,weights1))))])
