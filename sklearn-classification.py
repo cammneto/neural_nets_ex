@@ -1,7 +1,7 @@
-from sklearn.neural_network import MLPClassifier
 from sklearn import datasets
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
 from yellowbrick.classifier import ConfusionMatrix
 
 iris = datasets.load_iris()
