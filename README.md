@@ -1,3 +1,3 @@
 # neural_nets_ex
 Neural networks exercises
-Exercise solutions to neural networks couse from Udemy.
+Solutions to homeworks in "neural networks from scratch" couse from Udemy by Jones Granatyr.
